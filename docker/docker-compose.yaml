@@ -1,0 +1,144 @@
+version: '3'
+
+networks:
+  highload-network:
+    driver: bridge
+
+services:
+
+        highload:
+            build:
+                context: ./php-fpm
+                args:
+                    - timezone=${TZ}
+            networks:
+                - highload-network
+            volumes:
+                - ./../highload:/highload:rw,cached
+                - highload_log:/highload/var/log
+            env_file:
+                - .env
+            depends_on:
+                - redis
+                - memcached
+                - mariadb-master
+                - mariadb-slave-1
+                - mariadb-slave-2
+                - mariadb-slave-3
+                - mariadb-slave-4
+               
+        nginx:
+            container_name: nginx
+            build:
+                context: ./nginx
+                args:
+                    - timezone=${TZ}
+            ports:
+                - "81:80"
+                - "443:443"
+            networks:
+                - highload-network
+            depends_on:
+                - highload
+            volumes:
+                - ./../highload/public:/highload/public
+                - ./nginx/ssl:/etc/nginx/ssl
+                - ./nginx/conf.d:/etc/nginx/conf.d
+                - ./nginx/nginx_log:/var/log/nginx
+                - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            env_file:
+                - .env
+            command: /bin/bash -c "exec nginx -g 'daemon off;'"
+
+        redis:
+            container_name: redis
+            image: redis:latest
+            ports:
+                - "6379:6379"
+            networks:
+                - highload-network
+
+        memcached:
+            container_name: memcached
+            image: memcached:latest
+            ports:
+                    - "11211:11211"
+            networks:
+                - highload-network
+
+        mariadb-master:
+            container_name: mariadb_master
+            image: mariadb:latest
+            env_file:
+                - ./maria/master/.env.master
+            ports:
+                - "3307:3306"
+            volumes:
+                - ./maria/master/master.sql:/docker-entrypoint-initdb.d/start.sql
+                - ./maria/master/mysql.master.cnf:/etc/mysql/conf.d/mysql.master.cnf
+                - ./maria/master/.data/mysql:/var/lib/mysql:rw
+            networks:
+                - highload-network
+
+        mariadb-slave-1:
+            container_name: mariadb_slave_1
+            image: mariadb:latest
+            env_file:
+                - ./maria/slaves/slave_1/.env.slave
+            ports:
+                - "3308:3306"
+            volumes:
+                - ./maria/slaves/slave.sql:/docker-entrypoint-initdb.d/start.sql
+                - ./maria/slaves/slave_1/mysql.slave.cnf:/etc/mysql/conf.d/mysql.slave.cnf
+                - ./maria/slaves/slave_1/.data/mysql:/var/lib/mysql:rw
+            networks:
+                - highload-network
+
+        mariadb-slave-2:
+            container_name: mariadb_slave_2
+            image: mariadb:latest
+            env_file:
+                - ./maria/slaves/slave_2/.env.slave
+            ports:
+                - "3309:3306"
+            volumes:
+                - ./maria/slaves/slave.sql:/docker-entrypoint-initdb.d/start.sql
+                - ./maria/slaves/slave_2/mysql.slave.cnf:/etc/mysql/conf.d/mysql.slave.cnf
+                - ./maria/slaves/slave_2/.data/mysql:/var/lib/mysql:rw
+            networks:
+                - highload-network
+
+        mariadb-slave-3:
+            container_name: mariadb_slave_3
+            image: mariadb:latest
+            env_file:
+                - ./maria/slaves/slave_3/.env.slave
+            ports:
+                - "3310:3306"
+            volumes:
+                - ./maria/slaves/slave.sql:/docker-entrypoint-initdb.d/start.sql
+                - ./maria/slaves/slave_3/mysql.slave.cnf:/etc/mysql/conf.d/mysql.slave.cnf
+                - ./maria/slaves/slave_3/.data/mysql:/var/lib/mysql:rw
+            networks:
+                - highload-network
+
+        mariadb-slave-4:
+            container_name: mariadb_slave_4
+            image: mariadb:latest
+            env_file:
+                - ./maria/slaves/slave_4/.env.slave
+            ports:
+                - "3311:3306"
+            volumes:
+                - ./maria/slaves/slave.sql:/docker-entrypoint-initdb.d/start.sql
+                - ./maria/slaves/slave_4/mysql.slave.cnf:/etc/mysql/conf.d/mysql.slave.cnf
+                - ./maria/slaves/slave_4/.data/mysql:/var/lib/mysql:rw
+            networks:
+                - highload-network
+
+
+volumes:
+    nginx_log:
+    highload_log:
+    db:
+        driver: local
