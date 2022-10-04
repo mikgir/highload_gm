@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Modules\Order\Order;
+use App\Modules\Order\OrderStorageInterface;
 use Illuminate\Routing\Controller as BaseController;
 
 class OrderStorageController extends BaseController

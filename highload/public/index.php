@@ -30,7 +30,7 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 | into the script here so we don't need to manually load our classes.
 |
 */
-
+//
 require __DIR__.'/../vendor/autoload.php';
 
 /*
@@ -53,3 +53,18 @@ $response = $kernel->handle(
 )->send();
 
 $kernel->terminate($request, $response);
+//
+//require_once 'MemcachedService.php';
+//require_once 'RedisService.php';
+//
+//$memcached = new MemcachedService();
+//$memcached->getCache();
+//
+//echo '===========================================';
+//
+//$redis = new RedisService();
+//$redis->getCache();
+
+
+
+die();
