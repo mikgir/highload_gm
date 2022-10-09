@@ -68,8 +68,8 @@ $kernel->terminate($request, $response);
 //$redis->getCache();
 
 //die();
-$rabbitPublisherService = new RabbitPublisherService();
-$rabbitPublisherService->sendMessage();
-
-$rabbitReceivingService = new RabbitReceivingService();
-$rabbitReceivingService->handleMessage();
+//$rabbitPublisherService = new RabbitPublisherService();
+//$rabbitPublisherService->sendMessage();
+//
+//$rabbitReceivingService = new RabbitReceivingService();
+//$rabbitReceivingService->handleMessage();
