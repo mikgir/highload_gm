@@ -114,6 +114,20 @@
       <excludeFolder url="file://$MODULE_DIR$/highload/vendor/sebastian/code-unit" />
       <excludeFolder url="file://$MODULE_DIR$/highload/vendor/sebastian/comparator" />
       <excludeFolder url="file://$MODULE_DIR$/highload/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/react/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/react/socket" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/react/event-loop" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/react/promise-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/react/dns" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/cboden/ratchet" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/ratchet/rfc6455" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/evenement/evenement" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/php-amqplib/php-amqplib" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/highload/vendor/phpseclib/phpseclib" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

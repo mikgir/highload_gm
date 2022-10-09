@@ -108,9 +108,94 @@
       <path value="$PROJECT_DIR$/highload/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/highload/vendor/sebastian/comparator" />
       <path value="$PROJECT_DIR$/highload/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/highload/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/highload/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/highload/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/highload/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/highload/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/highload/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/highload/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/highload/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/highload/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/highload/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/highload/vendor/php-amqplib/php-amqplib" />
+      <path value="$PROJECT_DIR$/highload/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/highload/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/highload/vendor/phpseclib/phpseclib" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpInterpreters">
+    <interpreters>
+      <interpreter id="3a3d1f81-b3e7-4f13-8126-3d370ab28cff" name="docker-highload:latest" home="docker://DATA" debugger_id="php.debugger.XDebug">
+        <remote_data INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" INITIALIZED="false" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_IMAGE_NAME="docker-highload:latest" DOCKER_REMOTE_PROJECT_PATH="/opt/project" />
+      </interpreter>
+    </interpreters>
+  </component>
+  <component name="PhpInterpretersPhpInfoCache">
+    <phpInfoCache>
+      <interpreter name="docker-highload:latest">
+        <phpinfo binary_type="PHP" php_cli="/usr/local/bin/php" path_separator=":" version="8.1.11">
+          <additional_php_ini>/usr/local/etc/php/conf.d/docker-php-ext-amqp.ini, /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini, /usr/local/etc/php/conf.d/docker-php-ext-bcmath.ini, /usr/local/etc/php/conf.d/docker-php-ext-intl.ini, /usr/local/etc/php/conf.d/docker-php-ext-memcached.ini, /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini, /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini, /usr/local/etc/php/conf.d/docker-php-ext-redis.ini, /usr/local/etc/php/conf.d/docker-php-ext-sockets.ini, /usr/local/etc/php/conf.d/docker-php-ext-sodium.ini, /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini, /usr/local/etc/php/conf.d/docker-php-ext-zip.ini</additional_php_ini>
+          <configuration_file>/usr/local/etc/php/php.ini</configuration_file>
+          <configuration_options>
+            <configuration_option name="include_path" value=".:/usr/local/lib/php" />
+          </configuration_options>
+          <debuggers>
+            <debugger_info debugger="xdebug" debugger_version="3.1.5">
+              <debug_extensions />
+            </debugger_info>
+          </debuggers>
+          <loaded_extensions>
+            <extension name="Core" />
+            <extension name="PDO" />
+            <extension name="Phar" />
+            <extension name="Reflection" />
+            <extension name="SPL" />
+            <extension name="SimpleXML" />
+            <extension name="Zend OPcache" />
+            <extension name="amqp" />
+            <extension name="apcu" />
+            <extension name="bcmath" />
+            <extension name="ctype" />
+            <extension name="curl" />
+            <extension name="date" />
+            <extension name="dom" />
+            <extension name="fileinfo" />
+            <extension name="filter" />
+            <extension name="ftp" />
+            <extension name="hash" />
+            <extension name="iconv" />
+            <extension name="intl" />
+            <extension name="json" />
+            <extension name="libxml" />
+            <extension name="mbstring" />
+            <extension name="memcached" />
+            <extension name="mysqlnd" />
+            <extension name="openssl" />
+            <extension name="pcre" />
+            <extension name="pdo_mysql" />
+            <extension name="pdo_sqlite" />
+            <extension name="posix" />
+            <extension name="readline" />
+            <extension name="redis" />
+            <extension name="session" />
+            <extension name="sockets" />
+            <extension name="sodium" />
+            <extension name="sqlite3" />
+            <extension name="standard" />
+            <extension name="tokenizer" />
+            <extension name="xdebug" />
+            <extension name="xml" />
+            <extension name="xmlreader" />
+            <extension name="xmlwriter" />
+            <extension name="zip" />
+            <extension name="zlib" />
+          </loaded_extensions>
+        </phpinfo>
+      </interpreter>
+    </phpInfoCache>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/highload/vendor/autoload.php" />
