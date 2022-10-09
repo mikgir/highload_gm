@@ -66,6 +66,19 @@ services:
             networks:
                 - highload-network
 
+        rabbitMQ:
+            container_name: rabbitMQ
+            image: rabbitmq:3.8-management-alpine
+            ports:
+                - "5672:5672"
+                - "15672:15672"
+            volumes:
+                - ./rabbitMQ/data/:/var/lib/rabbitmq/
+                - ./rabbitMQ/log/:/var/log/rabbit:rw
+            networks:
+                - highload-network
+
+
         mariadb-master:
             container_name: mariadb_master
             image: mariadb:latest

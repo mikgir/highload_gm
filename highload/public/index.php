@@ -1,5 +1,7 @@
 <?php
 
+use App\Modules\Rabbit\RabbitPublisherService;
+use App\Modules\Rabbit\RabbitReceivingService;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
@@ -65,6 +67,9 @@ $kernel->terminate($request, $response);
 //$redis = new RedisService();
 //$redis->getCache();
 
+//die();
+$rabbitPublisherService = new RabbitPublisherService();
+$rabbitPublisherService->sendMessage();
 
-
-die();
+$rabbitReceivingService = new RabbitReceivingService();
+$rabbitReceivingService->handleMessage();
